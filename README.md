@@ -70,7 +70,7 @@ k= 15 resulted in a high accuracy level of about 85% for RandomForestRegressor, 
 Install dependencies using:
 pip install -r requirements.txt
 
-# or if using conda
+#### or if using conda
 conda env create -f environment.yml
 conda activate stats_ml
 
