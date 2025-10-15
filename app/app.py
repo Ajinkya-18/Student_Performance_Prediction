@@ -150,7 +150,7 @@ if st.sidebar.button('Predict Final Grade'):
         st.success(f"**Predicted Final Grade (G3): {predicted_grade:.2f} / 20**")
 
         st.progress(predicted_grade / 20.0)
-        st.balloons
+        st.balloons()
 
     except Exception as e:
         st.error(f"An error occurred during prediction: {e}")
