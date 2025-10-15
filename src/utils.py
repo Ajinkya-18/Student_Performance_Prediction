@@ -114,7 +114,7 @@ def load_model(model_path:str):
     cwd = os.getcwd()
     full_model_path = os.path.join(cwd, Path(model_path))
 
-    if os.path.exists(full_model_path) and full_model_path.endswith('.joblib'):
+    if os.path.exists(full_model_path) and model_path.endswith('.joblib'):
         from joblib import load
 
         with open(full_model_path, 'rb') as f:
@@ -185,6 +185,5 @@ def test_model(x_test, model_instance=None, fitted_model_path:str='models/rfr_fi
     except Exception as e:
         raise e
     
-
-
+#--------------------------------------------------------------------------------------------------------------
 
