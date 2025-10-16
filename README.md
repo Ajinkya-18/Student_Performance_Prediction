@@ -24,11 +24,16 @@ student-performance-prediction/
 │
 ├── requirements.txt # Required Python packages
 ├── environment.yml # Conda environment configuration
-└── README.md # Project documentation
 
-yaml
-Copy
-Edit
+├── README.md # Project documentation
+
+---
+
+### Key implementation files (in this repository)
+
+- `src/preprocessing_n_training_pipeline.py` — loads the CSV, runs cleaning and preprocessing (`src/utils.py`) and prepares train/test splits ready for model training.
+- `src/inference.py` — loads the preprocessed data, loads a saved model (default: `models/rfr_fitted_with_best_params.joblib`) and computes R² score on the test split.
+- `src/utils.py` — utility routines used across the project: data loading, cleaning, feature engineering, column-transformer based preprocessing, feature selection helpers, model save/load utilities, plus simple train/test wrappers.
 
 ---
 
@@ -70,13 +75,25 @@ k= 15 resulted in a high accuracy level of about 85% for RandomForestRegressor, 
 Install dependencies using:
 pip install -r requirements.txt
 
-#### or if using conda
+
+### or if using conda
+
+```powershell
 conda env create -f environment.yml
 conda activate stats_ml
+```
 
 📦 Dataset Source
 This project uses the maths.csv file from the Kaggle dataset:
 
-https://www.kaggle.com/datasets/whenamancodes/alcohol-effects-on-study
+[Alcohol effects on study (Kaggle)](https://www.kaggle.com/datasets/whenamancodes/alcohol-effects-on-study)
 
-The dataset is included in this project directory under data/ for convenience.
+The dataset is included in this project directory under `data/` for convenience.
+
+---
+## Streamlit App Link:
+- [Student Performance Predictor](https://student-performance-predictor-app.streamlit.app/)
+---
+
+
+
